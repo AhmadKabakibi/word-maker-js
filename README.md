@@ -16,15 +16,15 @@ is already *required* for you in `src/index.js`
 ## Tasks Implementation
 `src/index.js`
 
-// Tasks 1
+// Task 1
 Tasks.randomWordsSync()
 
-// Tasks 2
+// Task 2
 Tasks.randomWordsFizzBuzzSync()
 
-// Tasks 3
+// Task 3
 Tasks.randomWordsFizzBuzz()
 
-// Tasks 4
+// Task 4
 Tasks.fizzBuzzHandler()
 Tasks.fizzBuzzSyncHandler()

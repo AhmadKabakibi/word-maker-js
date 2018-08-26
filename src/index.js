@@ -4,12 +4,12 @@ const Tasks = require('./tasks')
 console.log('It works!')
 // YOUR CODE HERE
 logger.info('It works!')
-// Tasks 1
+// Task 1
 //Tasks.randomWordsSync()
-// Tasks 2
+// Task 2
 //Tasks.randomWordsFizzBuzzSync()
-// Tasks 3
+// Task 3
 //Tasks.randomWordsFizzBuzz()
-// Tasks 4
+// Task 4
 //Tasks.fizzBuzzHandler()
 Tasks.fizzBuzzSyncHandler()
