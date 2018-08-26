@@ -7,7 +7,9 @@ const logger = require('./logger')
 module.exports = {
   randomWordsSync: randomWordsSync,
   randomWordsFizzBuzzSync: randomWordsFizzBuzzSync,
-  randomWordsFizzBuzz: randomWordsFizzBuzz
+  randomWordsFizzBuzz: randomWordsFizzBuzz,
+  fizzBuzzHandler: fizzBuzzHandler,
+  fizzBuzzSyncHandler: fizzBuzzSyncHandler
 }
 
 /*
@@ -73,6 +75,50 @@ function randomWordsFizzBuzz () {
         .then((word) => {
           logger.info(`${i}: ${word}`)
         })
+    }
+  }
+}
+
+/*
+ Add error handling to both the synchronous and asynchronous solutions
+(calling `getRandomWord({ withErrors: true })` will intermitently throw an error instead of return a random word).
+When an error is caught, the programm should print "Doh!" instead of the random word, "Fizz", "Buzz" or "FizzBuzz"
+*/
+
+function fizzBuzzHandler () {
+  for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      getRandomWord({ withErrors: true })
+        .then(word => logger.info(`${i}: ${word}`))
+        .catch(() => logger.info(`${i}: Doh!`))
+    } else if (i % 3 === 0) {
+      getRandomWord({ withErrors: true })
+        .then(word => logger.info(`${i}: Fizz`))
+        .catch(() => logger.info(`${i}: Doh!`))
+    } else if (i % 5 === 0) {
+      getRandomWord({ withErrors: true })
+        .then(word => logger.info(`${i}: Buzz`))
+        .catch(() => logger.info(`${i}: Doh!`))
+    } else {
+      getRandomWord({ withErrors: true })
+        .then(word => logger.info(`${i}: ${word}`))
+        .catch(() => logger.info(`${i}: Doh!`))
+    }
+  }
+}
+
+async function fizzBuzzSyncHandler () {
+  for (let i = 1; i <= 100; i++) {
+    try {
+      if (i % 3 === 0 && i % 5 === 0) await logger.info(`${i}: Fizz Buzz`)
+      else if (i % 3 === 0) await logger.info(`${i}: Fizz`)
+      else if (i % 5 === 0) await logger.info(`${i}: Buzz`)
+      else {
+        let word = await getRandomWordSync({ withErrors: true })
+        await logger.info(`${i}: ${word}`)
+      }
+    } catch (error) {
+      logger.info(`${i}: Doh!`)
     }
   }
 }

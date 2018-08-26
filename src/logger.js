@@ -10,7 +10,7 @@ part of your solution does not need to actually run)
 */
 
 // flags: 'w' Open file for writing. The file is created (if it does not exist) or truncated (if it exists).
-const logFile = fs.createWriteStream(path.join(__dirname, '..', 'debug.log'), {flags: 'w'})
+const logFile = fs.createWriteStream(path.join(__dirname, '..', 'debug.log.'), {flags: 'a'})
 const logStdout = process.stdout
 
 module.exports = {

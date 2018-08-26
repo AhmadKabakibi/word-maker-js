@@ -13,6 +13,18 @@ The tasks in this assessment use the included package `word-maker` which can be 
 `./word-maker`. This directory also contains a *README.md* with details about its usage and API. The module
 is already *required* for you in `src/index.js`
 
-## Tasks
+## Tasks Implementation
+`src/index.js`
 
-1. Add error handling to both the synchronous and asynchronous solutions (calling `getRandomWord({ withErrors: true })` will intermitently throw an error instead of return a random word). When an error is caught, the programm should print "Doh!" instead of the random word, "Fizz", "Buzz" or "FizzBuzz"
+// Tasks 1
+Tasks.randomWordsSync()
+
+// Tasks 2
+Tasks.randomWordsFizzBuzzSync()
+
+// Tasks 3
+Tasks.randomWordsFizzBuzz()
+
+// Tasks 4
+Tasks.fizzBuzzHandler()
+Tasks.fizzBuzzSyncHandler()
