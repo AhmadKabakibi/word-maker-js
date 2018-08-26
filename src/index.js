@@ -5,4 +5,5 @@ console.log('It works!')
 // YOUR CODE HERE
 logger.info('It works!')
 // Tasks 1
-Tasks.taskOne()
+Tasks.randomWords()
+Tasks.randomWordsFizzBuzz()
